@@ -1,10 +1,10 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-// Keeps RMPL Livecom/CSBD's SSO access into Vendor-Sync's Redefine Marcom
+// Keeps RMPL Livecom/CSBD's SSO access into Vendorsync's Redefine Marcom
 // tenant in step with RMPL, the source of truth — in BOTH directions. This
 // replaces the old one-off script (scripts/sync-rmpl-livecom-csbd-viewers.mjs):
 // that only ever added access, so someone removed from Livecom/CSBD (or
-// deactivated outright) in RMPL kept their Vendor-Sync login indefinitely
+// deactivated outright) in RMPL kept their Vendorsync login indefinitely
 // unless a human remembered to re-run it — a standing backdoor. This runs
 // on a schedule (cron-worker, daily — see jobs.txt) and does a full diff
 // every time: anyone RMPL currently reports as active in Livecom/CSBD gets
@@ -81,7 +81,7 @@ Deno.serve(async (req) => {
       .map((e) => ({ ...e, email: e.email.toLowerCase(), isLivecom: /livecom/i.test(e.department!) }));
     const targetByEmail = new Map(target.map((e) => [e.email, e]));
 
-    // Every Vendor-Sync profile this sync could plausibly own: any active
+    // Every Vendorsync profile this sync could plausibly own: any active
     // Redefine Marcom profile whose department already reads Livecom/CSBD
     // (from a prior run), plus anyone matching today's target list by email.
     const { data: existingRows, error: existingErr } = await admin

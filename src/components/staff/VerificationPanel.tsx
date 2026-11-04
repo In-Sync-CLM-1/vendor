@@ -4,11 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { AlertCircle, CheckCircle2, XCircle, Loader2, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
-  useVendorVerifications,
+  useVendorChecks,
   useVerifyPan,
   useVerifyGst,
   useVerifyBankAccount,
-} from "@/hooks/useVendorVerification";
+} from "@/hooks/useVendorChecks";
 import { toast } from "@/hooks/use-toast";
 import { VerificationBadge } from "@/components/fraud/VerificationBadge";
 
@@ -27,7 +27,7 @@ export function VerificationPanel({
   bankAccountNumber,
   bankIfsc,
 }: VerificationPanelProps) {
-  const { data: verifications, isLoading: verificationsLoading, refetch } = useVendorVerifications(vendorId);
+  const { data: verifications, isLoading: verificationsLoading, refetch } = useVendorChecks(vendorId);
   const verifyPan = useVerifyPan();
   const verifyGst = useVerifyGst();
   const verifyBankAccount = useVerifyBankAccount();

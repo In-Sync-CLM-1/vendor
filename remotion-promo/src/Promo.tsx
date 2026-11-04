@@ -34,7 +34,7 @@ const Hook: React.FC = () => {
   return (
     <Center>
       <div>
-        <Eyebrow text="Vendor-Sync" delay={0} />
+        <Eyebrow text="Vendorsync" delay={0} />
         <div style={{ fontFamily: DISPLAY, fontWeight: 800, fontSize: V ? 74 : H1, lineHeight: 1.1, letterSpacing: -2, marginTop: 24 }}>
           <Words text="Every new vendor is a" delay={6} />
           <br />
@@ -95,7 +95,7 @@ const Wordmark: React.FC<{ delay: number }> = ({ delay }) => {
       }}>
         <span style={{ fontFamily: DISPLAY, fontWeight: 800, fontSize: 36, color: '#fff' }}>V</span>
       </div>
-      <span style={{ fontFamily: DISPLAY, fontWeight: 800, fontSize: 52, color: '#fff', letterSpacing: -1 }}>Vendor-Sync</span>
+      <span style={{ fontFamily: DISPLAY, fontWeight: 800, fontSize: 52, color: '#fff', letterSpacing: -1 }}>Vendorsync</span>
     </div>
   );
 };

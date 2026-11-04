@@ -161,7 +161,7 @@ Deno.serve(async (req) => {
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
             <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid #0066B3;">
-              <h1 style="color: #0066B3; margin: 0;">Vendor-Sync</h1>
+              <h1 style="color: #0066B3; margin: 0;">Vendorsync</h1>
               <p style="color: #666; margin: 5px 0 0;">Vendor Onboarding</p>
             </div>
             <div style="padding: 30px 0;">
@@ -175,7 +175,7 @@ Deno.serve(async (req) => {
               <p style="color: #666; font-size: 14px;">This invitation is valid for 7 days. If you did not expect this invitation, please ignore this email.</p>
             </div>
             <div style="border-top: 1px solid #eee; padding-top: 15px; text-align: center; color: #999; font-size: 12px;">
-              <p>Vendor-Sync by In-Sync</p>
+              <p>Vendorsync by In-Sync</p>
             </div>
           </div>
         `,

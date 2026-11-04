@@ -1,6 +1,6 @@
 # vendor
 
-In-Sync Vendor Verification — financial due diligence platform for vendor commitments. KYC verification (Credit Score, Bank Statement, GST, PAN), document upload with AI tampering detection, multi-tenant org workflows, and a public/partner API.
+In-Sync Vendorsync — financial due diligence platform for vendor commitments. KYC verification (Credit Score, Bank Statement, GST, PAN), document upload with AI tampering detection, multi-tenant org workflows, and a public/partner API.
 
 **Production:** https://vendor.in-sync.co.in
 
@@ -30,7 +30,7 @@ npm run lint
 
 Every push to `main` triggers `.github/workflows/deploy.yml`, which:
 
-1. Builds the frontend and publishes `dist/` to Cloudflare Pages (`vendorverification-sync`, domain `vendor.in-sync.co.in` (old `vendorverification.` URL 301-redirects)).
+1. Builds the frontend and publishes `dist/` to Cloudflare Pages (`vendorverification-sync`, domain `vendor.in-sync.co.in`).
 2. Applies any new SQL migrations via the Supabase Management API (`scripts/deploy-migrations.mjs`).
 3. Re-deploys all edge functions via the Supabase Management API (`scripts/deploy-functions.mjs`).
 

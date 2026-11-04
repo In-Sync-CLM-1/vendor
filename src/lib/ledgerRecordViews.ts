@@ -8,7 +8,7 @@
 // It only sees activity made through the app, not someone calling the database directly.
 
 const FINANCIAL_TABLES: string[] = [
-  "vendors", "vendor_verifications", "vendor_documents", "vendor_invoices", "vendor_invoice_payments", "vendor_invoice_project_allocations", "vendor_advance_requests", "vendor_pi_quotations", "purchase_orders", "vendor_detail_change_requests", "billing_transactions", "org_subscriptions",
+  "vendors", "vendor_checks", "vendor_documents", "vendor_invoices", "vendor_invoice_payments", "vendor_invoice_project_allocations", "vendor_advance_requests", "vendor_pi_quotations", "purchase_orders", "vendor_detail_change_requests", "billing_transactions", "org_subscriptions",
 ];
 const FINANCIAL = new Set(FINANCIAL_TABLES);
 // A financial table nested inside another read, e.g. "id,project_quotations(amount)" or "q:project_quotations!inner(".

@@ -14,11 +14,11 @@ mkdirSync(dir, { recursive: true });
 
 export const NARR = {
   hook: "Every new vendor is a stranger you're about to pay. A PAN, a bank line, nobody checked — and fraud shows up after the purchase order's signed.",
-  continuity: "Vendor-Sync verifies once, then keeps that same identity attached through onboarding, every invoice, every advance request, every settlement. Not a report you file away and forget.",
+  continuity: "Vendorsync verifies once, then keeps that same identity attached through onboarding, every invoice, every advance request, every settlement. Not a report you file away and forget.",
   verify: "PAN, GST and bank, checked against government sources in minutes. Duplicate identities and tampered documents, flagged before you commit.",
   ease: "Vendors file their own invoices and request their own advances. The AI reads every document — your team just approves.",
   outcome: "Every action timestamped, every payment visible to both sides — audit-ready, without a single spreadsheet.",
-  cta: "Vendor-Sync. Start free — your first three verifications are on us.",
+  cta: "Vendorsync. Start free — your first three verifications are on us.",
 };
 const ORDER = ['hook', 'continuity', 'verify', 'ease', 'outcome', 'cta'];
 

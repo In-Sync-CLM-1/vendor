@@ -43,7 +43,7 @@ async function sendEmail(subject, html) {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${env.RESEND_API_KEY}` },
     body: JSON.stringify({
-      from: "Vendor-Sync <noreply@in-sync.co.in>",
+      from: "Vendorsync <noreply@in-sync.co.in>",
       to: [OPS_EMAIL],
       subject: `[TEST] ${subject}`,
       html,
@@ -108,11 +108,11 @@ async function sendWhatsapp(templateName, params) {
 
 // --- 1. Approver-facing: "advance request submitted" -----------------------
 await sendEmail(
-  "Advance request from Prosync AI Solutions awaiting your approval - Vendor-Sync",
+  "Advance request from Prosync AI Solutions awaiting your approval - Vendorsync",
   `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
       <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid #0066B3;">
-        <h1 style="color: #0066B3; margin: 0;">Vendor-Sync</h1>
+        <h1 style="color: #0066B3; margin: 0;">Vendorsync</h1>
       </div>
       <div style="padding: 30px 0;">
         <p>Dear <strong>Manoj Mishra</strong>,</p>
@@ -138,11 +138,11 @@ await sendWhatsapp("staff_advance_request_submitted_v1", ["Manoj Mishra", "Prosy
 
 // --- 2. Vendor-facing: "advance request approved" ---------------------------
 await sendEmail(
-  "Advance request approved: ₹45,000 - Vendor-Sync",
+  "Advance request approved: ₹45,000 - Vendorsync",
   `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
       <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid #16a34a;">
-        <h1 style="color: #0066B3; margin: 0;">Vendor-Sync</h1>
+        <h1 style="color: #0066B3; margin: 0;">Vendorsync</h1>
       </div>
       <div style="padding: 30px 0;">
         <p>Dear <strong>Prosync AI Solutions</strong>,</p>

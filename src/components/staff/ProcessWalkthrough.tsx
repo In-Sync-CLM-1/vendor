@@ -41,7 +41,7 @@ interface Slide {
 const slides: Slide[] = [
   // 0 — Title
   {
-    title: "Vendor-Sync",
+    title: "Vendorsync",
     subtitle: "Vendor Lifecycle Management",
     duration: 5,
     render: () => (
@@ -49,7 +49,7 @@ const slides: Slide[] = [
         <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
           <Building2 className="h-5 w-5 text-primary" />
         </div>
-        <h2 className="text-2xl font-bold text-foreground mb-1">Vendor-Sync</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-1">Vendorsync</h2>
         <p className="text-muted-foreground text-sm max-w-sm">Verification, onboarding, invoicing &amp; settlement — one portal</p>
         <div className="flex gap-5 mt-5">
           {[
@@ -447,7 +447,7 @@ const slides: Slide[] = [
             <p className="text-[10px] text-green-700 mt-1 text-right">WhatsApp · just now ✓✓</p>
           </div>
           <div className="rounded-lg border bg-card px-3 py-2 shadow-sm animate-in fade-in slide-in-from-left-4 duration-500" style={{ animationDelay: "700ms", animationFillMode: "both" }}>
-            <p className="text-[10px] font-semibold text-muted-foreground mb-0.5">Vendor-Sync &lt;noreply@in-sync.co.in&gt;</p>
+            <p className="text-[10px] font-semibold text-muted-foreground mb-0.5">Vendorsync &lt;noreply@in-sync.co.in&gt;</p>
             <p className="text-xs font-medium">Payment recorded for invoice INV-2047</p>
           </div>
         </div>

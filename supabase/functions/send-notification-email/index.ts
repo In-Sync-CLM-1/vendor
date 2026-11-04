@@ -148,7 +148,7 @@ Deno.serve(async (req) => {
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
             <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid ${accentColor};">
               <h1 style="color: #0066B3; margin: 0;">In-Sync</h1>
-              <p style="color: #666; margin: 5px 0 0;">Vendor-Sync</p>
+              <p style="color: #666; margin: 5px 0 0;">Vendorsync</p>
             </div>
             <div style="padding: 30px 0;">
               <p>Dear <strong>${recipientName}</strong>,</p>

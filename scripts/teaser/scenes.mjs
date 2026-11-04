@@ -1,5 +1,5 @@
-// Vendor-Sync teaser — v2 "1 main + 3 subsets" (approved storytelling standard).
-//   MAIN    — Vendor-Sync ends both chases (documents + payments); your team keeps every decision
+// Vendorsync teaser — v2 "1 main + 3 subsets" (approved storytelling standard).
+//   MAIN    — Vendorsync ends both chases (documents + payments); your team keeps every decision
 //   SUBSET 1 — trust before money (live govt verification, duplicates/fraud flagged)
 //   SUBSET 2 — invoices file themselves (vendor uploads, AI reads, one review queue)
 //   SUBSET 3 — the chasing stops (vendors auto-notified on WhatsApp + email)
@@ -70,7 +70,7 @@ async function vendorSession(page) {
 const brandCard = (title, subtitle, foot) => `(() => {
   const c = document.createElement('div'); c.id='__brandcard';
   c.style.cssText='position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,hsl(210,45%,13%),hsl(204,100%,28%) 60%,hsl(204,100%,20%));opacity:0;transition:opacity .8s';
-  c.innerHTML="<div style=\\"font:700 18px 'Segoe UI',sans-serif;color:#9fd468;letter-spacing:3px;text-transform:uppercase\\">Vendor-Sync \\u00B7 Vendor Lifecycle Platform</div>"+
+  c.innerHTML="<div style=\\"font:700 18px 'Segoe UI',sans-serif;color:#9fd468;letter-spacing:3px;text-transform:uppercase\\">Vendorsync \\u00B7 Vendor Lifecycle Platform</div>"+
     "<div style=\\"font:800 56px 'Segoe UI',sans-serif;color:#fff;letter-spacing:-1.5px;margin-top:20px;max-width:1040px;text-align:center;line-height:1.18\\">${title}</div>"+
     "<div style=\\"font:500 26px 'Segoe UI',sans-serif;color:rgba(255,255,255,.92);margin-top:20px;max-width:940px;text-align:center\\">${subtitle}</div>"+
     "<div style=\\"font:600 17px 'Segoe UI',sans-serif;color:#9fd468;margin-top:30px\\">${foot}</div>";
@@ -87,7 +87,7 @@ const numbersCard = `(() => {
     '<div style="font:400 21px \\'Segoe UI\\',sans-serif;color:rgba(255,255,255,.55);padding:14px 24px;display:flex;align-items:center;justify-content:flex-end;text-align:right">'+before+'</div>'+
     '<div style="font:600 21px \\'Segoe UI\\',sans-serif;color:#9fd468;padding:14px 24px;border-left:1px solid rgba(255,255,255,.14);display:flex;align-items:center">'+after+'</div>';
   c.innerHTML =
-    '<div style="font:700 18px \\'Segoe UI\\',sans-serif;color:#9fd468;letter-spacing:3px;text-transform:uppercase">Vendor-Sync</div>'+
+    '<div style="font:700 18px \\'Segoe UI\\',sans-serif;color:#9fd468;letter-spacing:3px;text-transform:uppercase">Vendorsync</div>'+
     '<div style="font:800 56px \\'Segoe UI\\',sans-serif;color:#fff;letter-spacing:-1.5px;margin-top:16px;text-align:center;line-height:1.15">Both chases end.<br>You keep the decisions.</div>'+
     '<div style="display:grid;grid-template-columns:1fr 1fr;margin-top:36px;background:rgba(255,255,255,.06);border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12)">'+
       row('Days of chasing documents','Verified same afternoon \\u2014 live govt sources')+
@@ -104,8 +104,8 @@ const numbersCard = `(() => {
 const waBubble = `(() => {
   const c = document.createElement('div'); c.id='__wab';
   c.style.cssText='position:fixed;right:40px;top:96px;width:360px;z-index:2147483646;opacity:0;transform:translateX(90px);transition:opacity .5s,transform .55s cubic-bezier(.22,1.2,.36,1)';
-  c.innerHTML='<div style="background:#075E54;color:#fff;font:700 13px Segoe UI,sans-serif;padding:9px 14px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:8px"><span style="width:9px;height:9px;border-radius:50%;background:#25D366;display:inline-block"></span>WhatsApp · Vendor-Sync</div>'+
-    '<div style="background:#DCF8C6;color:#111;font:400 14px Segoe UI,sans-serif;padding:13px 15px;border-radius:0 0 12px 12px;box-shadow:0 18px 45px rgba(0,0,0,.35);line-height:1.5">Hi Anita, here\\'s an update on your invoice: <b>\\u20B995,640 paid against INV-2047.</b> Log in to the Vendor-Sync portal for the full breakup.<div style="text-align:right;font-size:11px;color:#5b7a58;margin-top:6px">just now \\u2713\\u2713</div></div>';
+  c.innerHTML='<div style="background:#075E54;color:#fff;font:700 13px Segoe UI,sans-serif;padding:9px 14px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:8px"><span style="width:9px;height:9px;border-radius:50%;background:#25D366;display:inline-block"></span>WhatsApp · Vendorsync</div>'+
+    '<div style="background:#DCF8C6;color:#111;font:400 14px Segoe UI,sans-serif;padding:13px 15px;border-radius:0 0 12px 12px;box-shadow:0 18px 45px rgba(0,0,0,.35);line-height:1.5">Hi Anita, here\\'s an update on your invoice: <b>\\u20B995,640 paid against INV-2047.</b> Log in to the Vendorsync portal for the full breakup.<div style="text-align:right;font-size:11px;color:#5b7a58;margin-top:6px">just now \\u2713\\u2713</div></div>';
   document.documentElement.appendChild(c);
   requestAnimationFrame(()=>{c.style.opacity='1';c.style.transform='translateX(0)';});
 })()`;
@@ -115,11 +115,11 @@ export const SCENES = [
 // ── 0. HOOK — pain + product named up front ──────────────────────
 {
   name: 'v0-hook', account: ACCT.guest,
-  narration: "Every month, two chases: your team chasing vendor documents, and vendors chasing payments. Vendor-Sync ends both — and your team keeps every decision.",
+  narration: "Every month, two chases: your team chasing vendor documents, and vendors chasing payments. Vendorsync ends both — and your team keeps every decision.",
   beats: async ({ page, D, ready }) => {
     await page.goto('about:blank').catch(() => {});
     await page.evaluate(brandCard(
-      'Two chases, every month.<br>Vendor-Sync ends both.',
+      'Two chases, every month.<br>Vendorsync ends both.',
       'Documents chase themselves in. Payments explain themselves out. Your team keeps every decision.',
       'vendor.in-sync.co.in',
     ));
@@ -213,7 +213,7 @@ export const SCENES = [
 // free tier (5, not 3).
 {
   name: 'v4-close', account: ACCT.guest,
-  narration: "That's Vendor-Sync: vendors verified before money moves, invoices that file themselves, and follow-up calls that stop — you keep the decisions. From five hundred rupees per vendor a month, first five verifications free. Book a demo — see it on your own vendors.",
+  narration: "That's Vendorsync: vendors verified before money moves, invoices that file themselves, and follow-up calls that stop — you keep the decisions. From five hundred rupees per vendor a month, first five verifications free. Book a demo — see it on your own vendors.",
   beats: async ({ page, at, D, ready }) => {
     await page.goto('about:blank').catch(() => {});
     await page.evaluate(numbersCard);

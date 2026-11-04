@@ -180,7 +180,7 @@ serve(async (req) => {
       } else if (usageResult === -2) {
         return new Response(
           JSON.stringify({
-            error: "This organization has reached its vendor verification limit. Please contact the organization to resolve this.",
+            error: "This organization has reached its vendor limit. Please contact the organization to resolve this.",
           }),
           {
             status: 200,

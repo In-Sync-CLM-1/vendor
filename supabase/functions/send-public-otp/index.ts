@@ -237,7 +237,7 @@ Deno.serve(async (req) => {
     const emailHtml = `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 480px; margin: 0 auto; padding: 40px 20px; background-color: #f4f4f5;">
         <div style="background-color: #ffffff; border-radius: 12px; padding: 40px 32px; text-align: center; border: 1px solid #e4e4e7;">
-          <h2 style="color: #111827; margin: 0 0 8px 0; font-size: 22px; font-weight: 700;">Vendor-Sync</h2>
+          <h2 style="color: #111827; margin: 0 0 8px 0; font-size: 22px; font-weight: 700;">Vendorsync</h2>
           <p style="color: #6b7280; margin: 0 0 28px 0; font-size: 14px;">${purpose === "org_registration" ? "Organization Registration" : purpose === "vendor_portal" ? "Vendor Portal Login" : "Vendor Registration Verification"}</p>
           <p style="color: #374151; margin: 0 0 16px 0; font-size: 14px;">Your verification code is:</p>
           <div style="border: 2px solid #d1d5db; border-radius: 10px; padding: 18px; margin: 0 0 24px 0; background-color: #f9fafb;">
@@ -258,7 +258,7 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         from: emailFrom,
         to: [normalizedIdentifier],
-        subject: purpose === "org_registration" ? "Your verification code for Vendor-Sync" : purpose === "vendor_portal" ? "Your login code for Vendor-Sync" : "Your OTP for Vendor Registration",
+        subject: purpose === "org_registration" ? "Your verification code for Vendorsync" : purpose === "vendor_portal" ? "Your login code for Vendorsync" : "Your OTP for Vendor Registration",
         html: emailHtml,
       }),
     });

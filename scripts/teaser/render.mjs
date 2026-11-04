@@ -1,4 +1,4 @@
-// Vendor-Sync teaser — continuous-narration pipeline: ONE Riya take for the whole
+// Vendorsync teaser — continuous-narration pipeline: ONE Riya take for the whole
 // script, video recorded to per-scene slots, crossfaded, audio laid underneath.
 //   node scripts/teaser/render.mjs
 // All scenes are view-only against the live demo tenant; there is no seeding step.

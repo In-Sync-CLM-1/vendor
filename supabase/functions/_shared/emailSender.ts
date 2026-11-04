@@ -1,7 +1,7 @@
 // Every tenant that hasn't configured its own verified sending domain falls
 // back to this shared address. Never remove/rename — changing it changes
 // the sender for every tenant without a dedicated from-name/address.
-const DEFAULT_FROM = "Vendor-Sync <noreply@in-sync.co.in>";
+const DEFAULT_FROM = "Vendorsync <noreply@in-sync.co.in>";
 
 // deno-lint-ignore no-explicit-any
 export async function getEmailFrom(admin: any, tenantId: string | null | undefined): Promise<string> {

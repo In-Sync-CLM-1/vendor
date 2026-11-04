@@ -18,7 +18,7 @@ import path from "node:path";
 const SUBMIT = process.argv.includes("--submit");
 const TEMPLATE_NAME = "pi_quotation_submitted_v1";
 const BODY =
-  "Hello {{1}}, {{2}} has submitted a {{3}} of {{4}} for project {{5}} on Vendor-Sync. " +
+  "Hello {{1}}, {{2}} has submitted a {{3}} of {{4}} for project {{5}} on Vendorsync. " +
   "Please review it and record your approval decision.";
 const SAMPLE = ["Manoj Mishra", "Prosync AI Solutions", "Proforma Invoice", "Rs 39530", "RMPL-26-999"];
 
