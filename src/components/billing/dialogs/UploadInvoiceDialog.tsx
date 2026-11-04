@@ -29,6 +29,9 @@ interface Props {
 }
 
 /** The invoice takes the place of the PI on this row. */
+// Client rule: an invoice may run up to 30% above the PO. submit_invoice_on_row enforces the same limit.
+const MAX_OVER_PO = 1.3;
+
 export function UploadInvoiceDialog({ open, onOpenChange, row, onDone }: Props) {
   const po = row ? poOf(row) : null;
   const [number, setNumber] = useState("");
@@ -86,7 +89,7 @@ export function UploadInvoiceDialog({ open, onOpenChange, row, onDone }: Props) 
     if (!amt || amt <= 0) return toast.error("Enter a valid invoice amount");
     const g = gst ? parseFloat(gst) : 0;
     if (g < 0 || g > amt) return toast.error("GST amount cannot exceed the invoice amount");
-    if (amt > Number(po.grand_total) + 1) return toast.error(`This invoice (${formatINR(amt)}) is more than the PO amount ${formatINR(po.grand_total)}`);
+    if (amt > Number(po.grand_total) * MAX_OVER_PO + 1) return toast.error(`This invoice (${formatINR(amt)}) is more than 30% above the PO amount ${formatINR(po.grand_total)}`);
 
     setSaving(true);
     try {
@@ -128,6 +131,7 @@ export function UploadInvoiceDialog({ open, onOpenChange, row, onDone }: Props) 
           <DialogDescription>
             Against PO {po?.po_number} · {formatINR(po?.grand_total)}. This invoice takes the place of the PI on this row. Once
             submitted, its details cannot be changed.
+            {po && <> The invoice can be up to 30% above the PO, which is {formatINR(Number(po.grand_total) * MAX_OVER_PO)}.</>}
           </DialogDescription>
         </DialogHeader>
 
