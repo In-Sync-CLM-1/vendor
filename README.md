@@ -1,4 +1,4 @@
-# vendorverification
+# vendor
 
 In-Sync Vendor Verification — financial due diligence platform for vendor commitments. KYC verification (Credit Score, Bank Statement, GST, PAN), document upload with AI tampering detection, multi-tenant org workflows, and a public/partner API.
 
