@@ -16,7 +16,7 @@ async function safeParseJson(response: Response): Promise<any> {
 
 export function useVendorChecks(vendorId: string) {
   return useQuery({
-    queryKey: ["vendor-verifications", vendorId],
+    queryKey: ["vendor-checks", vendorId],
     queryFn: async () => {
       const { data, error } = await supabase
         .from("vendor_checks")

@@ -1,4 +1,4 @@
-// vendor-sync external scheduler — ONE Cloudflare Worker per task. Mirrors
+// vendorsync external scheduler — ONE Cloudflare Worker per task. Mirrors
 // the identical pattern already used by RMPL and Work-Sync's own cron-worker.
 const FN_BASE = "https://oygyrpjjwtwvrdvxjzbg.supabase.co/functions/v1";
 const RPC_BASE = "https://oygyrpjjwtwvrdvxjzbg.supabase.co/rest/v1/rpc";
