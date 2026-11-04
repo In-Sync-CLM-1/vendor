@@ -35,4 +35,4 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler@latest pages deploy dist --project-name=vendorsync --branch=main --commit-dirty=true
+        run: npx wrangler@latest pages deploy dist --project-name=vendorverification-sync --branch=main --commit-dirty=true

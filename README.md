@@ -30,7 +30,7 @@ npm run lint
 
 Every push to `main` triggers `.github/workflows/deploy.yml`, which:
 
-1. Builds the frontend and publishes `dist/` to Cloudflare Pages (`vendorsync`, domain `vendor.in-sync.co.in`).
+1. Builds the frontend and publishes `dist/` to Cloudflare Pages (`vendorverification-sync`, domain `vendor.in-sync.co.in`).
 2. Applies any new SQL migrations via the Supabase Management API (`scripts/deploy-migrations.mjs`).
 3. Re-deploys all edge functions via the Supabase Management API (`scripts/deploy-functions.mjs`).
 
