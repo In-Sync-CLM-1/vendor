@@ -1,5 +1,5 @@
 /**
- * Replicates RMPL OPM project owners into Vendor-Sync as staff accounts.
+ * Replicates RMPL OPM project owners into Vendorsync as staff accounts.
  *
  * Every project in RMPL must be able to accept a PI, and a PI can only be
  * routed to someone who has an account here. Owners are therefore mirrored
@@ -117,7 +117,7 @@ async function main() {
   });
 
   console.log(`RMPL project owners: ${owners.length}`);
-  console.log(`already usable in Vendor-Sync: ${owners.length - pending.length}`);
+  console.log(`already usable in Vendorsync: ${owners.length - pending.length}`);
   if (toBackfillPhone.length) console.log(`missing a mobile number: ${toBackfillPhone.length}`);
   console.log(`to create: ${todo.length}`);
   for (const o of todo) console.log(`  - ${o.full_name} <${o.email}>`);

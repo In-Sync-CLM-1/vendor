@@ -734,7 +734,7 @@ Deno.serve(async (req) => {
       }
 
       const { data: verifications } = await supabase
-        .from("vendor_verifications")
+        .from("vendor_checks")
         .select("verification_type, status, verified_at")
         .eq("vendor_id", body.vendor_id)
         .order("verified_at", { ascending: false });

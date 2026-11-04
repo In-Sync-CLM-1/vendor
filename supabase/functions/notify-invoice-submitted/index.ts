@@ -176,11 +176,11 @@ Deno.serve(async (req) => {
           body: JSON.stringify({
             from: emailFrom,
             to: [approverEmail],
-            subject: `Invoice ${invoice.invoice_number} needs your review - Vendor-Sync`,
+            subject: `Invoice ${invoice.invoice_number} needs your review - Vendorsync`,
             html: `
               <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
                 <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid #0066B3;">
-                  <h1 style="color: #0066B3; margin: 0;">Vendor-Sync</h1>
+                  <h1 style="color: #0066B3; margin: 0;">Vendorsync</h1>
                 </div>
                 <div style="padding: 30px 0;">
                   <p>Dear <strong>${approverName}</strong>,</p>

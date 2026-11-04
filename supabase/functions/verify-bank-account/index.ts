@@ -56,7 +56,7 @@ serve(async (req) => {
     const { data: vendor } = await supabase.from("vendors").select("tenant_id").eq("id", vendor_id).maybeSingle();
 
     const verificationId = crypto.randomUUID();
-    await supabase.from("vendor_verifications").insert({
+    await supabase.from("vendor_checks").insert({
       id: verificationId,
       vendor_id,
       tenant_id: vendor?.tenant_id,
@@ -85,7 +85,7 @@ serve(async (req) => {
     try {
       responseData = JSON.parse(responseText);
     } catch {
-      await supabase.from("vendor_verifications").update({
+      await supabase.from("vendor_checks").update({
         status: "error",
         response_data: { raw: responseText, http_status: response.status },
       }).eq("id", verificationId);
@@ -99,7 +99,7 @@ serve(async (req) => {
     const isValid = responseData.success && responseData.data?.account_exists;
     const verificationStatus = isValid ? "success" : "failed";
 
-    await supabase.from("vendor_verifications").update({
+    await supabase.from("vendor_checks").update({
       status: verificationStatus,
       response_data: responseData.data || responseData,
       verified_at: new Date().toISOString(),

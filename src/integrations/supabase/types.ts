@@ -2428,7 +2428,7 @@ export type Database = {
           },
         ]
       }
-      vendor_verifications: {
+      vendor_checks: {
         Row: {
           created_at: string
           id: string
@@ -2476,21 +2476,21 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "vendor_verifications_tenant_id_fkey"
+            foreignKeyName: "vendor_checks_tenant_id_fkey"
             columns: ["tenant_id"]
             isOneToOne: false
             referencedRelation: "tenants"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "vendor_verifications_vendor_id_fkey"
+            foreignKeyName: "vendor_checks_vendor_id_fkey"
             columns: ["vendor_id"]
             isOneToOne: false
             referencedRelation: "vendors"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "vendor_verifications_vendor_id_fkey"
+            foreignKeyName: "vendor_checks_vendor_id_fkey"
             columns: ["vendor_id"]
             isOneToOne: false
             referencedRelation: "vendors_decrypted"

@@ -391,10 +391,10 @@ export default function LandingPage() {
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Vendor-Sync" className="h-10 w-auto" />
+            <img src={logo} alt="Vendorsync" className="h-10 w-auto" />
             <div className="leading-tight">
               <span className="block text-lg font-bold tracking-tight text-primary">
-                Vendor-Sync
+                Vendorsync
               </span>
               <span className="hidden sm:block text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                 by In-Sync
@@ -459,7 +459,7 @@ export default function LandingPage() {
                 className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed"
               >
                 You verify every employee you hire — but you wire lakhs to
-                vendors you've never checked. Vendor-Sync verifies PAN, GST and
+                vendors you've never checked. Vendorsync verifies PAN, GST and
                 bank against government sources and flags fraud before you sign
                 the purchase order — then keeps that same verified identity
                 attached through onboarding, every invoice, every advance
@@ -619,7 +619,7 @@ export default function LandingPage() {
               <br className="hidden sm:block" /> vendor relationship
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Most tools stop at onboarding. Vendor-Sync stays for the
+              Most tools stop at onboarding. Vendorsync stays for the
               relationship — the vendor you verify on day one is the same
               vendor invoicing you on day ninety.
             </p>
@@ -713,7 +713,7 @@ export default function LandingPage() {
               </div>
               <img
                 src="/screenshots/product-analytics.png"
-                alt="Vendor-Sync invoice analytics — billed vs settled cash motion, payment pipeline and vendor exposure"
+                alt="Vendorsync invoice analytics — billed vs settled cash motion, payment pipeline and vendor exposure"
                 loading="lazy"
                 className="w-full block"
               />
@@ -729,7 +729,7 @@ export default function LandingPage() {
             >
               <img
                 src="/screenshots/product-invoices.png"
-                alt="Vendor-Sync invoice queue — vendor invoices with amounts, settlement and status"
+                alt="Vendorsync invoice queue — vendor invoices with amounts, settlement and status"
                 loading="lazy"
                 className="w-full block"
               />
@@ -787,10 +787,10 @@ export default function LandingPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              {/* Vendor-Sync is literally the bright side */}
+              {/* Vendorsync is literally the bright side */}
               <div className="h-full rounded-xl bg-card text-foreground shadow-2xl ring-1 ring-white/20 p-8">
                 <h3 className="text-xl font-bold text-accent mb-6">
-                  With Vendor-Sync
+                  With Vendorsync
                 </h3>
                 <ul className="space-y-4">
                   {[
@@ -832,7 +832,7 @@ export default function LandingPage() {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Onboarding runs once per vendor. Invoicing runs for the life of
-              the relationship. Vendor-Sync carries both.
+              the relationship. Vendorsync carries both.
             </p>
           </motion.div>
 
@@ -1178,7 +1178,7 @@ export default function LandingPage() {
           >
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm font-medium mb-8">
               <Building2 className="h-4 w-4 text-accent" />
-              Vendor-Sync — vendor lifecycle management
+              Vendorsync — vendor lifecycle management
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight mb-6 leading-tight">
               Every vendor.
@@ -1216,9 +1216,9 @@ export default function LandingPage() {
       <footer className="bg-card border-t border-border py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Vendor-Sync" className="h-8 w-auto" />
+            <img src={logo} alt="Vendorsync" className="h-8 w-auto" />
             <span>
-              <span className="font-semibold text-foreground">Vendor-Sync</span> by In-Sync — Vendor Lifecycle Management
+              <span className="font-semibold text-foreground">Vendorsync</span> by In-Sync — Vendor Lifecycle Management
             </span>
           </div>
           <div className="flex items-center gap-4">

@@ -1,6 +1,6 @@
 export const FPS = 30;
 
-// Vendor-Sync brand hues (from src/index.css tokens): deep blue primary, lime accent.
+// Vendorsync brand hues (from src/index.css tokens): deep blue primary, lime accent.
 export const C = {
   bg1: '#050d16',
   bg2: '#0a1c2e',

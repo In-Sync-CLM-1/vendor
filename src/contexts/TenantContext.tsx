@@ -187,7 +187,7 @@ function applyBranding(tenant: TenantConfig) {
   }
 
   // Update page title
-  document.title = `${tenant.short_name} · Vendor-Sync`;
+  document.title = `${tenant.short_name} · Vendorsync`;
 }
 
 /** Hardcoded defaults for pre-migration or fallback */

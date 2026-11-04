@@ -1,4 +1,4 @@
-# Vendor-Sync ledger worker
+# Vendorsync ledger worker
 
 Cloudflare Worker `vendorsync-ledger` that guards the tamper-evident activity ledger (`activity_ledger` and the `ledger_*` tables in Supabase).
 

@@ -1,4 +1,4 @@
-// Vendor-Sync app access for the promo camera.
+// Vendorsync app access for the promo camera.
 // pages.dev origin: same build as the custom domain, no zone bot-challenge risk.
 export const BASE = 'https://vendorverification-sync.pages.dev';
 

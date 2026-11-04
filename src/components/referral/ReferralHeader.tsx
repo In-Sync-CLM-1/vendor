@@ -33,7 +33,7 @@ export function ReferralHeader({ currentStep = 0, tenantId }: ReferralHeaderProp
   }, [tenantId]);
 
   const logo = referringTenant?.logo_url || defaultLogo;
-  const name = referringTenant?.short_name || defaultTenant?.short_name || "Vendor-Sync";
+  const name = referringTenant?.short_name || defaultTenant?.short_name || "Vendorsync";
 
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
