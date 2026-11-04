@@ -1,6 +1,6 @@
 // Vendorsync app access for the promo camera.
 // pages.dev origin: same build as the custom domain, no zone bot-challenge risk.
-export const BASE = 'https://vendorverification-sync.pages.dev';
+export const BASE = 'https://vendorsync-cym.pages.dev';
 
 export async function login(page, email, password) {
   await page.goto(`${BASE}/staff/login`, { waitUntil: 'domcontentloaded' });

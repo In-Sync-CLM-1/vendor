@@ -1,4 +1,4 @@
-// Mux remotion visual + narration + music bed -> Downloads\vendor-sync-promo.mp4
+// Mux remotion visual + narration + music bed -> Downloads\vendorsync-promo.mp4
 import { execFileSync } from 'child_process';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -12,7 +12,7 @@ const silent = process.argv[2] || join(here, '..', 'remotion-promo', 'out', 'pro
 const narr = join(scenes, 'promo-narration.mp3');
 const music = join(here, 'assets', 'promo-bed.mp3');
 const mixed = join(scenes, 'promo-remotion-mixed.mp4');
-const OUT = process.argv[3] || 'C:\\Users\\Admin\\Downloads\\vendor-sync-promo.mp4';
+const OUT = process.argv[3] || 'C:\\Users\\Admin\\Downloads\\vendorsync-promo.mp4';
 
 const dur = V.duration(silent);
 console.log(`visual ${dur.toFixed(2)}s, narration ${V.duration(narr).toFixed(2)}s`);
