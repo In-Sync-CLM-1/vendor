@@ -51,6 +51,6 @@ crossfadeStitchVideo(videos, silent, T_X);
 const narrated = join(dir, 'teaser-narrated.mp4');
 overlayAudio(silent, join(dir, 'full-narration.mp3'), narrated);
 // Graceful outro: hold the end card ~2s and fade to black.
-const out = 'C:\\Users\\Admin\\Downloads\\vendor-sync-teaser.mp4';
+const out = 'C:\\Users\\Admin\\Downloads\\vendorsync-teaser.mp4';
 holdAndFade(narrated, out, 2.0, 1.2);
 console.log('DONE ->', out);
