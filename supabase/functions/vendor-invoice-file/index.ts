@@ -43,7 +43,7 @@ Deno.serve(async (req) => {
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const cfAccountId = Deno.env.get("CF_ACCOUNT_ID");
     const cfApiToken = Deno.env.get("CF_API_TOKEN");
-    const bucket = Deno.env.get("R2_BUCKET") || "vendorverification-files";
+    const bucket = Deno.env.get("R2_BUCKET") || "vendorsync-files";
 
     if (!cfAccountId || !cfApiToken) {
       console.error("R2 credentials not configured");

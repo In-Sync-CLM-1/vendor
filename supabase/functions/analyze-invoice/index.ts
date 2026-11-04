@@ -411,7 +411,7 @@ Deno.serve(async (req) => {
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const cfAccountId = Deno.env.get("CF_ACCOUNT_ID");
     const cfApiToken = Deno.env.get("CF_API_TOKEN");
-    const bucket = Deno.env.get("R2_BUCKET") || "vendorverification-files";
+    const bucket = Deno.env.get("R2_BUCKET") || "vendorsync-files";
     const groqApiKey = Deno.env.get("GROQ_API_KEY");
     const anthropicApiKey = Deno.env.get("ANTHROPIC_API_KEY");
 

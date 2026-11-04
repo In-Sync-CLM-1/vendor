@@ -7,7 +7,7 @@ const corsHeaders = {
 };
 
 // Logos are shown unauthenticated on login/registration pages, so they live in
-// a separate public R2 bucket — never the private vendorverification-files
+// a separate public R2 bucket — never the private vendorsync-files
 // bucket, which holds KYC/invoice documents and must stay non-public.
 const ALLOWED_MIME_TYPES: { [key: string]: string[] } = {
   png: ["image/png"],
