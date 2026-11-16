@@ -340,65 +340,56 @@ export default function AdminSettings() {
                     )}
                   </div>
 
-                  <div className="space-y-3">
-                    <Label htmlFor="encryption-key">
-                      {keyStatus?.configured ? "Rotate Encryption Key" : "Set Encryption Key"}
-                    </Label>
-                    <div className="flex gap-2">
-                      <div className="relative flex-1">
-                        <Input
-                          id="encryption-key"
-                          type={showKey ? "text" : "password"}
-                          value={encryptionKey}
-                          onChange={(e) => setEncryptionKey(e.target.value)}
-                          placeholder="Enter AES-256 encryption key (min 16 chars)"
-                          className="pr-10"
-                        />
+                  {keyStatus?.configured ? (
+                    <p className="text-sm text-muted-foreground">
+                      The key is in use for every organisation's records, so it cannot be replaced here: replacing it would make existing vendor and staff details unreadable.
+                    </p>
+                  ) : !keyStatusLoading && (
+                    <div className="space-y-3">
+                      <Label htmlFor="encryption-key">
+                        Set Encryption Key
+                      </Label>
+                      <div className="flex gap-2">
+                        <div className="relative flex-1">
+                          <Input
+                            id="encryption-key"
+                            type={showKey ? "text" : "password"}
+                            value={encryptionKey}
+                            onChange={(e) => setEncryptionKey(e.target.value)}
+                            placeholder="Enter AES-256 encryption key (min 16 chars)"
+                            className="pr-10"
+                          />
+                          <Button
+                            type="button"
+                            variant="ghost"
+                            size="icon"
+                            className="absolute right-0 top-0 h-full px-3 hover:bg-transparent"
+                            onClick={() => setShowKey(!showKey)}
+                          >
+                            {showKey ? <EyeOff className="h-4 w-4 text-muted-foreground" /> : <Eye className="h-4 w-4 text-muted-foreground" />}
+                          </Button>
+                        </div>
                         <Button
-                          type="button"
-                          variant="ghost"
-                          size="icon"
-                          className="absolute right-0 top-0 h-full px-3 hover:bg-transparent"
-                          onClick={() => setShowKey(!showKey)}
+                          onClick={() => saveEncryptionKey.mutate()}
+                          disabled={!encryptionKey || encryptionKey.length < 16 || saveEncryptionKey.isPending}
                         >
-                          {showKey ? <EyeOff className="h-4 w-4 text-muted-foreground" /> : <Eye className="h-4 w-4 text-muted-foreground" />}
+                          {saveEncryptionKey.isPending ? (
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                          ) : (
+                            <>
+                              <KeyRound className="h-4 w-4 mr-2" />
+                              Save Key
+                            </>
+                          )}
                         </Button>
                       </div>
-                      <Button
-                        onClick={() => saveEncryptionKey.mutate()}
-                        disabled={!encryptionKey || encryptionKey.length < 16 || saveEncryptionKey.isPending}
-                      >
-                        {saveEncryptionKey.isPending ? (
-                          <Loader2 className="h-4 w-4 animate-spin" />
-                        ) : (
-                          <>
-                            <KeyRound className="h-4 w-4 mr-2" />
-                            Save Key
-                          </>
-                        )}
-                      </Button>
+                      {encryptionKey && encryptionKey.length < 16 && (
+                        <p className="text-xs text-destructive">Key must be at least 16 characters long</p>
+                      )}
                     </div>
-                    {encryptionKey && encryptionKey.length < 16 && (
-                      <p className="text-xs text-destructive">Key must be at least 16 characters long</p>
-                    )}
-                  </div>
+                  )}
                 </CardContent>
               </Card>
-
-              {keyStatus?.configured && (
-                <Card className="border-warning/50 bg-warning/5">
-                  <CardContent className="p-4 flex gap-3">
-                    <AlertTriangle className="h-5 w-5 text-warning shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium text-sm">Key Rotation Warning</p>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Changing the encryption key will make previously encrypted PII data unreadable unless all existing data is re-encrypted with the new key. 
-                        Ensure you have a data migration plan before rotating keys.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              )}
 
               <Card className="border-primary/20 bg-primary/5">
                 <CardContent className="p-4">

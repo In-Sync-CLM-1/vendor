@@ -58,7 +58,23 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Save action
+    // Save action. The key is shared by every organisation, so only a platform admin may set it,
+    // and only once: replacing it would leave every record encrypted with the old key unreadable.
+    const { data: isPlatformAdmin } = await adminClient.rpc("is_platform_admin", { _user_id: userId });
+    if (!isPlatformAdmin) {
+      return new Response(JSON.stringify({ error: "Only the platform administrator can set the encryption key" }), {
+        status: 403,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const { data: alreadySet } = await adminClient.rpc("check_encryption_key_exists");
+    if (alreadySet) {
+      return new Response(JSON.stringify({ error: "The encryption key is already set and cannot be replaced" }), {
+        status: 409,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     if (!encryption_key || typeof encryption_key !== "string" || encryption_key.length < 16) {
       return new Response(
         JSON.stringify({ error: "Encryption key must be at least 16 characters" }),
