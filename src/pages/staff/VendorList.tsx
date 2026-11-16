@@ -391,7 +391,7 @@ export default function VendorList() {
         </div>
 
         {/* Tabs */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex flex-col">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex flex-col min-w-0">
           <TabsList className="w-full justify-start px-4 h-auto py-2 bg-card border-b rounded-none">
             <TabsTrigger value="vendors" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               Vendors
@@ -413,7 +413,7 @@ export default function VendorList() {
                 <XCircle className="h-3.5 w-3.5 text-destructive" /> {rejectedCount} rejected
               </span>
             </div>
-            <div className="rounded-md bg-card">
+            <div className="rounded-md bg-card overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow>
