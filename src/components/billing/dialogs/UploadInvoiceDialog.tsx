@@ -135,7 +135,7 @@ export function UploadInvoiceDialog({ open, onOpenChange, row, onDone }: Props) 
           </DialogDescription>
         </DialogHeader>
 
-        <div className="grid gap-4 py-2">
+        <div className="grid min-w-0 grid-cols-1 gap-4 py-2">
           <div className="space-y-1.5">
             <Label htmlFor="inv-file">Invoice file (PDF/JPG/PNG) *</Label>
             <Input id="inv-file" type="file" accept=".pdf,.jpg,.jpeg,.png" disabled={busy} onChange={(e) => onFile(e.target.files?.[0] || null)} />

@@ -353,8 +353,8 @@ export default function LivecomInvoiceUpload() {
               ) : (
                 <div className="space-y-3">
                   {allocations.map((row) => (
-                    <div key={row.key} className="flex gap-2 items-start">
-                      <div className="flex-1">
+                    <div key={row.key} className="flex flex-wrap sm:flex-nowrap gap-2 items-start">
+                      <div className="min-w-0 basis-full sm:basis-0 sm:flex-1">
                         <ProjectCombobox
                           value={row.project?.id || null}
                           valueName={row.project?.project_name}
@@ -367,7 +367,7 @@ export default function LivecomInvoiceUpload() {
                         min="0"
                         step="0.01"
                         placeholder="Share (₹)"
-                        className="w-32"
+                        className="min-w-0 flex-1 sm:flex-none sm:w-32"
                         value={row.amount}
                         onChange={(e) => updateAllocation(row.key, { amount: e.target.value })}
                         disabled={busy}

@@ -75,7 +75,7 @@ export function StaffLayout({ children, title }: StaffLayoutProps) {
     <SidebarProvider>
       <div className="min-h-screen flex w-full">
         <StaffSidebar />
-        <SidebarInset>
+        <SidebarInset className="min-w-0">
           <header className="h-14 flex items-center justify-between border-b px-4 shrink-0">
             <div className="flex items-center">
               <SidebarTrigger className="mr-3" />
@@ -83,7 +83,7 @@ export function StaffLayout({ children, title }: StaffLayoutProps) {
             </div>
             <NotificationBell />
           </header>
-          <main className="flex-1 overflow-auto">
+          <main className="flex-1 min-w-0 overflow-auto">
             {children}
           </main>
           <footer className="border-t border-border px-4 py-2 text-xs text-muted-foreground flex items-center justify-between">

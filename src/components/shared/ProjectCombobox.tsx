@@ -63,9 +63,9 @@ export function ProjectCombobox({ value, valueName, onChange, disabled }: Projec
           role="combobox"
           aria-expanded={open}
           disabled={disabled}
-          className="w-full justify-between font-normal"
+          className="w-full min-w-0 justify-between overflow-hidden font-normal"
         >
-          <span className="truncate">{selectedName || "Select project…"}</span>
+          <span className="min-w-0 flex-1 truncate text-left">{selectedName || "Select project…"}</span>
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -94,7 +94,7 @@ export function ProjectCombobox({ value, valueName, onChange, disabled }: Projec
                       }}
                     >
                       <Check className={cn("mr-2 h-4 w-4 shrink-0", value === p.id ? "opacity-100" : "opacity-0")} />
-                      <span className="truncate">{p.project_name}</span>
+                      <span className="min-w-0 break-words">{p.project_name}</span>
                       {p.project_number && (
                         <span className="ml-2 text-xs text-muted-foreground shrink-0">{p.project_number}</span>
                       )}

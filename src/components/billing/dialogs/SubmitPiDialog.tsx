@@ -132,15 +132,15 @@ export function SubmitPiDialog({ open, onOpenChange, vendorId, resubmitRow, onDo
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>{resubmitRow ? "Fix and resubmit" : "Submit PI / Quotation"}</DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="break-words">
             {resubmitRow
               ? `The project owner said: “${resubmitRow.pi_review_comments || "please correct and resubmit"}”. Upload the corrected file.`
               : "Pick the project this is for and upload the document. It goes straight to that project's owner for approval."}
           </DialogDescription>
         </DialogHeader>
 
-        <div className="grid gap-4 py-2">
-          <div className="space-y-1.5">
+        <div className="grid min-w-0 grid-cols-1 gap-4 py-2">
+          <div className="min-w-0 space-y-1.5">
             <Label>Document Type *</Label>
             <RadioGroup value={documentType} onValueChange={(v) => setDocumentType(v as typeof documentType)} className="flex gap-4" disabled={busy}>
               <div className="flex items-center gap-2">
@@ -155,12 +155,12 @@ export function SubmitPiDialog({ open, onOpenChange, vendorId, resubmitRow, onDo
           </div>
 
           {resubmitRow ? (
-            <div className="rounded-md border bg-muted/40 p-2.5 text-sm">
+            <div className="min-w-0 break-words rounded-md border bg-muted/40 p-2.5 text-sm">
               <b>{resubmitRow.project_number}</b> · {resubmitRow.project_name}
               <p className="text-xs text-muted-foreground">Approver: {resubmitRow.project_owner_name}</p>
             </div>
           ) : (
-            <div className="space-y-1.5">
+            <div className="min-w-0 space-y-1.5">
               <Label>Project *</Label>
               <ProjectCombobox value={project?.id || null} valueName={project?.project_name} onChange={setProject} disabled={busy} />
               {project && project.project_owner_user_id === null ? (
@@ -173,7 +173,7 @@ export function SubmitPiDialog({ open, onOpenChange, vendorId, resubmitRow, onDo
             </div>
           )}
 
-          <div className="space-y-1.5">
+          <div className="min-w-0 space-y-1.5">
             <Label htmlFor="piq-file">File (PDF/JPG/PNG) *</Label>
             <Input id="piq-file" type="file" accept=".pdf,.jpg,.jpeg,.png" disabled={busy} onChange={(e) => handleFileChange(e.target.files?.[0] || null)} />
             {parsing && (<p className="flex items-center gap-1.5 text-xs text-muted-foreground"><Loader2 className="h-3 w-3 animate-spin" /> Reading document…</p>)}
@@ -184,7 +184,7 @@ export function SubmitPiDialog({ open, onOpenChange, vendorId, resubmitRow, onDo
             )}
           </div>
 
-          <div className="space-y-1.5">
+          <div className="min-w-0 space-y-1.5">
             <Label htmlFor="piq-remarks">Remarks</Label>
             <Textarea id="piq-remarks" value={remarks} onChange={(e) => setRemarks(e.target.value)} rows={3} placeholder="Any context that helps the project owner review this" disabled={busy} />
           </div>

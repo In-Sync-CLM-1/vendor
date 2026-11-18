@@ -55,7 +55,7 @@ export function RequestAdvanceDialog({ open, onOpenChange, row, onDone }: BasePr
           <DialogTitle>Request advance</DialogTitle>
           <DialogDescription>Against PO {po?.po_number} · {formatINR(po?.grand_total)}. The advance is taken off when your invoice is paid. One advance per PO.</DialogDescription>
         </DialogHeader>
-        <div className="grid gap-3 py-2">
+        <div className="grid min-w-0 grid-cols-1 gap-3 py-2">
           <div className="space-y-1.5"><Label htmlFor="adv-amt">Advance amount *</Label><Input id="adv-amt" type="number" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder={`Up to ${po ? formatINR(po.grand_total) : ""}`} /></div>
           <div className="space-y-1.5"><Label htmlFor="adv-why">What is it for? *</Label><Input id="adv-why" value={reason} onChange={(e) => setReason(e.target.value)} placeholder="e.g. material purchase" /></div>
         </div>
@@ -186,7 +186,7 @@ export function RaiseCreditNoteDialog({ open, onOpenChange, row, onDone }: BaseP
           <DialogTitle>Raise credit note</DialogTitle>
           <DialogDescription>Against invoice {row?.invoice_number} · still open {formatINR(open_)}</DialogDescription>
         </DialogHeader>
-        <div className="grid gap-3 py-2">
+        <div className="grid min-w-0 grid-cols-1 gap-3 py-2">
           <div className="space-y-1.5">
             <Label htmlFor="cn-file">Credit note file (PDF/JPG/PNG) *</Label>
             <Input id="cn-file" type="file" accept=".pdf,.jpg,.jpeg,.png" disabled={busy} onChange={(e) => onFile(e.target.files?.[0] || null)} />
