@@ -75,7 +75,7 @@ export function StaffLayout({ children, title }: StaffLayoutProps) {
     <SidebarProvider>
       <div className="min-h-screen flex w-full">
         <StaffSidebar />
-        <SidebarInset>
+        <SidebarInset className="min-w-0">
           <header className="h-14 flex items-center justify-between border-b px-4 shrink-0">
             <div className="flex items-center">
               <SidebarTrigger className="mr-3" />
