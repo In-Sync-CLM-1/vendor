@@ -33,6 +33,8 @@ import {
   AlertTriangle,
   RefreshCw,
   Percent,
+  FileSignature,
+  HandCoins,
 } from "lucide-react";
 import { UrlTabs } from "@/components/UrlTabs";
 
@@ -238,7 +240,32 @@ export default function VendorPortalDashboard() {
   const totalTds = invoiceRows.reduce((s, r) => s + tdsTotal(r), 0);
   const totalBalance = invoiceRows.reduce((s, r) => s + (balanceOf(r) ?? 0), 0);
 
+  // Every job starts with a PI or Quotation on the same row, so count every row that has one.
+  const piRows = rows.filter((r) => r.pi_amount != null || !!r.pi_document_number);
+  const totalPi = piRows.reduce((s, r) => s + Number(r.pi_amount || 0), 0);
+  const piAwaiting = piRows.filter((r) => r.pi_approval_stage === "awaiting_owner" || r.pi_approval_stage === "awaiting_accounts").length;
+  const advRows = rows.filter((r) => r.adv_status === "requested" || r.adv_status === "paid");
+  const totalAdvRequested =
+    advRows.reduce((s, r) => s + Number(r.adv_amount || 0), 0) +
+    earlierAdvances.filter((a) => a.status !== "rejected").reduce((s, a) => s + Number(a.amount || 0), 0);
+  const advPending =
+    advRows.filter((r) => r.adv_status === "requested").length +
+    earlierAdvances.filter((a) => a.status === "pending").length;
+  const advCount = advRows.length + earlierAdvances.length;
+
   const tiles = [
+    {
+      label: "PI / Quotations",
+      value: formatINR(totalPi),
+      sub: `${piRows.length} submitted${piAwaiting ? ` · ${piAwaiting} awaiting approval` : ""}`,
+      icon: FileSignature,
+    },
+    {
+      label: "Advance requests",
+      value: formatINR(totalAdvRequested),
+      sub: `${advCount} ${advCount === 1 ? "request" : "requests"}${advPending ? ` · ${advPending} pending` : ""}`,
+      icon: HandCoins,
+    },
     { label: "Invoiced", value: formatINR(totalInvoiced), sub: `${invoiceRows.length} ${invoiceRows.length === 1 ? "invoice" : "invoices"}`, icon: FileText },
     { label: "Settled", value: formatINR(totalSettled), sub: "paid, TDS and advance", icon: Landmark },
     { label: "TDS deducted", value: formatINR(totalTds), sub: "across all payments", icon: Percent },
@@ -297,7 +324,7 @@ export default function VendorPortalDashboard() {
 
       <main className="max-w-[1600px] mx-auto px-4 py-6 space-y-6">
         {approved && (
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {tiles.map((t) => (
               <Card key={t.label}>
                 <CardContent className="p-4">
